@@ -1,0 +1,15 @@
+{% extends 'post/base.html' %}
+
+{% block body %}
+<div class="container-base">
+    {% for post in posts %}
+    <div class="container-part-1">
+        <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+        <p>{{ post.content }}</p>
+    </div>
+    {% endfor %}
+    <form action="{% url 'post_create' %}">
+        <button>Write Post</button>
+    </form>
+</div>
+{% endblock %}

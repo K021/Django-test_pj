@@ -1,0 +1,14 @@
+{% extends 'post/base.html' %}
+
+{% block body %}
+<div class="container-base">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="post-create-form-title">Title</label>
+        <div id="post-create-form-title">{{ form.title }}</div>
+        <label for="post-create-form-content">Content</label>
+        <div id="post-create-form-content">{{ form.content }}</div>
+        <button>write</button>
+    </form>
+</div>
+{% endblock %}

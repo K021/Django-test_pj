@@ -6,9 +6,9 @@
         <h3>{{ post.title }}</h3>
         <p>{{ post.content }}</p>
     </div>
-    <div>
-        <a href="{% url 'post_create' %}">Write Post</a>
-    </div>
+    <form action="{% url 'post_create' %}">
+        <button>Write Post</button>
+    </form>
     <form action="{% url 'post_delete' pk=post.pk %}" method="post">
         {% csrf_token %}
         <button>Delete Post</button>

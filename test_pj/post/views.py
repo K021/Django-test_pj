@@ -28,9 +28,6 @@ def post_create(request):
             title = form.cleaned_data['title']
             content = form.cleaned_data['content']
             post = Post.objects.create(title=title, content=content)
-            context = {
-                'pk': post.pk,
-            }
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostCreateForm()
